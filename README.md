@@ -16,6 +16,12 @@ If you find STRIDE helpful or use it in your projects, please cite:
 ```
 
 ## Example
+We provide a starting example about how to use STRIDE in the script `example_quasar.m`, you can simply run the script in Matlab.
+
+For more examples of using STRIDE for machine perception applications, please navigate to the repo [CertifiablyRobustPerception](https://github.com/MIT-SPARK/CertifiablyRobustPerception).
+
+## How to use STRIDE
+
+## Available Parameters
 
 
-## Parameters 
