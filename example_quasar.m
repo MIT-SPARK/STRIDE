@@ -15,7 +15,9 @@ manoptpath      = '../manopt'; % required for local search
 sdpnalpath      = '../SDPNAL+v1.0'; % required for ADMM+
 
 %% Load problem data
-load('./data/quasar_50_1.mat')
+% We provide two example data, both with 50% outliers
+load('./data/quasar_50_1.mat') % Wahba with 50 measurements
+% load('./data/quasar_100_1.mat') % Wahba with 100 measurements
 
 % choose whether to run graduated non-convexity (GNC) for primal initialization
 % For details about GNC, see
