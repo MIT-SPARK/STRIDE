@@ -32,7 +32,7 @@ The function signature for STRIDE is
 [out,Xopt,yopt,Sopt] = PGDSDP(blk,At,b,C,X0,options)
 ```
 where `PGDSDP` stands for _projected gradient descent_ in solving a generic SDP problem (which is the backbone of STRIDE). We now describe the detailed input and out of STRIDE.
-#### Input
+### Input
 - `blk,At,b,C`: standard SDP data in SDPT3 format. A standard SDP problem can be fully described by `blk,At,b,C`, where `blk` describes the sizes of the positive semidefinite constraints (i.e., blocks, we do not support other conic constraints such as second-order cone and nonnegative orthant), `At,b` describes the linear constraints, and `C` describes the linear cost function. `blk,At,C` should be Matlab cell arrays, while `b` should be a Matlab array. Please refer to the [SDPT3 user guide](https://blog.nus.edu.sg/mattohkc/softwares/sdpt3/) for details. We provide two example problem data for the QUASAR SDP in the subfolder `data`. If you are interested in how to generate standard SDP problem data from semidefinite relaxations of polynomial optimization problems, please navigate to the repo [CertifiablyRobustPerception](https://github.com/MIT-SPARK/CertifiablyRobustPerception).
 
 - `X0`: a primal initial guess for the SDP problem. Set `X0 = []` if no initial guess is available. A good way of providing an initial primal guess is to use `fmincon` in Matlab to solve the original polynomial optimization problem (if the POP admits a manifold structure, Manopt should be preferred), obtain a local optimizer, and lift the local optimizer to a rank-one feasible point of the SDP. Please read our [paper](https://arxiv.org/abs/2105.14033) for more details. 
@@ -43,11 +43,11 @@ where `PGDSDP` stands for _projected gradient descent_ in solving a generic SDP 
   - `options.SDPNALpath`: a string that provides the path to the software package [SDPNAL+](https://blog.nus.edu.sg/mattohkc/softwares/sdpnalplus/). STRIDE uses the `admmplus` subroutine in SDPNAL+ to warmstart.
 The other optional parameters are described in more details [below](https://github.com/MIT-SPARK/STRIDE#available-parameters).
 
-#### Output
+### Output
 - `Xopt,yopt,Sopt`: an (approximate) optimal solution to the SDP. In many cases, STRIDE can solve the SDP to very high accuracy (even better than MOSEK). The printout of STRIDE will show the KKT residuals at `Xopt,yopt,Sopt`.
 - `out`: a Matlab structure that contains other information such as run history and runtime.
 
-#### Available parameters
+### Available parameters
 We now list all the available but optional parameters in `options`:
 - `options.S0`: a dual initial guess. Typically it is difficult to have a good guess on the dual variables. If not provided, STRIDE uses ADMM+ to generate dual initial guess. However, in some cases, one can exploit problem structure to provide clever dual initializations, please checkout our [paper](https://arxiv.org/abs/2109.03349) for details.
 
@@ -73,6 +73,11 @@ We now list all the available but optional parameters in `options`:
 
 
 ## Implement your local search scheme
+Coming soon...
+
+## Acknowledgements
+STRIDE is implemented by [Heng Yang](https://hankyang.mit.edu/) (MIT) and [Ling Liang](https://blog.nus.edu.sg/liangling/) (NUS). We would like to thank the feedback and resources from [Prof. Kim-Chuan Toh](https://blog.nus.edu.sg/mattohkc/) (NUS), and [Prof. Luca Carlone](https://lucacarlone.mit.edu/) (MIT).
+
 
 
 
