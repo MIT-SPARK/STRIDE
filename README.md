@@ -26,7 +26,7 @@ We provide a starting example about how to use STRIDE to solve the [QUASAR](http
 
 We also provide an example about using MOSEK to solve the same QUASAR problems, you can run the script `example_quasar_mosek.m` in Matlab (for which please download [MOSEK](https://www.mosek.com/downloads/)).
 
-Surprise: you should see STRIDE being **50** times faster on `data/quasar_100_1.mat` (100 measurements, 20 seconds vs. 1000 seconds) and **30** times faster on `data/quasar_50_1.mat` (50 measurements, 2 seconds vs. 60 seconds). Note that MOSEK cannot solve larger problems than `data/quasar_100_1.mat`, but STRIDE has successfully solved problems with up to 1000 measurements (in which case the SDP has millions of constraints, see our [paper](https://arxiv.org/abs/2105.14033)).
+Surprise: you should see STRIDE being **50** times faster on `data/quasar_100_1.mat` (100 measurements, 20 seconds vs. 1000 seconds) and **30** times faster on `data/quasar_50_1.mat` (50 measurements, 2 seconds vs. 60 seconds). Note that MOSEK cannot solve larger problems than `data/quasar_100_1.mat`, but STRIDE has successfully solved problems with up to 1000 measurements (in which case the SDP has millions of constraints, see our [paper](https://arxiv.org/abs/2105.14033)). However, the goal of STRIDE is not to replace MOSEK -for generic SDP problems that have small to medium size, MOSEK is still the go-to solver- but to provide a solution for large-scale SDPs arising from rank-one semidefinite relaxations that are far beyond the reach of MOSEK.
 
 For more examples of using STRIDE for machine perception applications, please navigate to the repo [CertifiablyRobustPerception](https://github.com/MIT-SPARK/CertifiablyRobustPerception).
 
@@ -101,7 +101,7 @@ We now explain the input and output of `local_search_func`.
 
 - `fhat`: value of the SDP objective function attained by `Xhat`, by using the cost matrix `C`.
 
-- `info`: a structure that contains the following information:
+- `info` (optional output): a structure that contains the following information:
   - `info.nlpsuccess`: a boolean value that indicates whether the local search has been successful (for example, if the nonlinear programming solver has failed, then `info.nlpsuccess = false`).
   - `info.minidx`: the index of the eigenvector, from which the local search solution is best. For example, if `rrOpt = 1:3`, and the local solution obtained from rounding the second eigenvector attained the lowest cost, then `info.minidx = 2`.
   - `info.pobjs`: the objective values of all local search solutions.
