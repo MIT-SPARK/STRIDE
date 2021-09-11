@@ -35,6 +35,7 @@ options.maxiterPGD      = 5; % maximum outer iterations for STRIDE, default 5-10
 options.SDPNALpath      = sdpnalpath; % provide path to SDPNAL
 options.tolADMM         = 1e-4; % tolerance for warmstart, decrease this parameter for a better warmstart (but takes more time)
 options.tolPGD          = 1e-8; % tolerance on KKT residual of the SDP
+options.lbfgseps        = false;
 
 % provide implementation to the local search method
 options.rrOpt           = 1:3; % round the leading 3 eigenvectors to generate hypotheses

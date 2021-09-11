@@ -22,7 +22,11 @@ In order to run the example code `example_quasar.m`, please download the followi
 
 
 ## Example
-We provide a starting example about how to use STRIDE in the script `example_quasar.m`, you can simply run the script in Matlab.
+We provide a starting example about how to use STRIDE to solve the [QUASAR](https://arxiv.org/abs/1905.12536) semidefinite relaxation in the script `example_quasar.m`, you can simply run the script in Matlab.
+
+We also provide an example about using MOSEK to solve the same QUASAR problems, you can run the script `example_quasar_mosek.m` in Matlab (for which please download [MOSEK](https://www.mosek.com/downloads/)).
+
+Surprise: you should see STRIDE being **50** times faster on `data/quasar_100_1.mat` (100 measurements, 20 seconds vs. 1000 seconds) and **30** times faster on `data/quasar_50_1.mat` (50 measurements, 2 seconds vs. 60 seconds). Note that MOSEK cannot solve larger problems than `data/quasar_100_1.mat`, but STRIDE has successfully solved problems with up to 1000 measurements (see our [paper](https://arxiv.org/abs/2105.14033)).
 
 For more examples of using STRIDE for machine perception applications, please navigate to the repo [CertifiablyRobustPerception](https://github.com/MIT-SPARK/CertifiablyRobustPerception).
 
