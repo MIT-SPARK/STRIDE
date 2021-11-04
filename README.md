@@ -7,9 +7,9 @@ STRIDE is designed for solving high-order semidefinite programming (SDP) relaxat
 If you find STRIDE helpful or use it in your projects, please cite:
 
 ```bibtex
-@article{Yang21arxiv-stride,
-  title={STRIDE along Spectrahedral Vertices for Solving Large-Scale Rank-One Semidefinite Relaxations},
-  author={Yang, Heng and Liang, Ling and Toh, Kim-Chuan and Carlone, Luca},
+@article{Yang21arxiv-STRIDE,
+  title={An Inexact Projected Gradient Method with Rounding and Lifting by Nonlinear Programming for Solving Rank-One Semidefinite Relaxation of Polynomial Optimization},
+  author={Yang, Heng and Liang, Ling and Carlone, Luca and Toh, Kim-Chuan},
   journal={arXiv preprint arXiv:2105.14033},
   year={2021}
 }
