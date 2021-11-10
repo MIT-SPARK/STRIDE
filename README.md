@@ -1,4 +1,4 @@
-# STRIDE: spectrahedral proximal gradient descent along vertices
+# STRIDE: SpecTrahedRal Inexact projected gradient Descent along vErtices
 A Solver for Large-Scale Rank-One Semidefinite Relaxations
 
 ## About
