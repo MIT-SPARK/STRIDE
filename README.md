@@ -19,7 +19,7 @@ If you find STRIDE helpful or use it in your projects, please cite:
 
 ## Dependencies
 In order to run the example code `example_quasar.m`, please download the following two packages and provide paths to them in `example_quasar.m`:
-- [SDPNAL+](https://blog.nus.edu.sg/mattohkc/softwares/sdpnalplus/): STRIDE uses the ADMM+ subroutine in SDPNAL+ to warmstart.
+- [SDPNAL+](https://blog.nus.edu.sg/mattohkc/softwares/sdpnalplus/): STRIDE uses the ADMM+ subroutine in SDPNAL+ to warmstart. Note that the SDPNAL+ software package seems to have been updated after STRIDE was released. We recommend downloading a version of SDPNAL+ that is compatible with STRIDE from [here](https://drive.google.com/open?id=1FxOvzZfVBPASWC8LYxtWmmFwOeUdakU-&authuser=hankyang%40g.harvard.edu&usp=drive_fs).
 - [Manopt](https://www.manopt.org/downloads.html): in `example_quasar.m`, STRIDE uses Manopt to perform local search to generate rank-one strides.
 
 
